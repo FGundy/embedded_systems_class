@@ -1,0 +1,17 @@
+# Build outputs
+*.o
+*.exe
+*.bin
+*.hex
+
+# IDE specific files
+.vscode/
+*.swp
+
+# Debug files
+*.map
+*.lst
+
+# Dependencies
+vendor/
+node_modules/
