@@ -22,22 +22,17 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity hw2_question2_conditionalsignal is
---  Port ( );
+    port (
+        A, B : in std_logic;  -- Inputs
+        F    : out std_logic  -- Output
+    );
 end hw2_question2_conditionalsignal;
 
-architecture Behavioral of hw2_question2_conditionalsignal is
-
+architecture conditional of hw2_question2_conditionalsignal is
 begin
-
-
-end Behavioral;
+    F <= '1' when (not A and B) = '1' else   -- A'B
+         '1' when (A = '1') else             -- A
+         '1' when (A and not B) = '1' else   -- AB'
+         '0';                                -- Default case (F = 0)
+end conditional;
